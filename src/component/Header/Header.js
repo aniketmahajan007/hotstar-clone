@@ -25,15 +25,15 @@ function Header(){
                     <img src={Watchlisticon} alt="Watch list" />
                     <span>WATCHLIST</span>
                 </a>
-                <a href="#">
+                <a href="#" className="menu_short_remove">
                     <img src={Originalsicon} alt="Original" />
                     <span>ORIGINALS</span>
                 </a>
-                <a href="#">
+                <a href="#" className="menu_short_remove">
                     <img src={Movieicon} alt="Movies" />
                     <span>MOVIES</span>
                 </a>
-                <a href="#">
+                <a href="#" className="menu_short_remove">
                     <img src={SeriesIcon} alt="Series" />
                     <span>SERIES ICON</span>
                 </a>
