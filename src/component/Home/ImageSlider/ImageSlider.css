@@ -1,0 +1,14 @@
+.ImageSlider{
+    margin-top:-20px;
+}
+.SlideImage{
+    box-shadow: rgb(0 0 0) 0px 26px 30px -10px,
+    rgb(0 0 0) 0 16px 10px -10px;
+}
+.SlideImage >img{
+    width: 100%;
+    height: 100%;
+}
+.ImageSlider .slick-list{
+    overflow: visible;
+}

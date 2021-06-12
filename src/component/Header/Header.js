@@ -13,27 +13,27 @@ function Header(){
         <div className="Header">
             <img className="header__logo" src={Logo} alt="Hotstar Logo" />
             <div className="Nav_menu">
-                <a>
+                <a href="#">
                     <img src={Homeicon} alt="Home" />
                     <span>HOME</span>
                 </a>
-                <a>
+                <a href="#">
                     <img src={Searchicon} alt="Search" />
                     <span>SEARCH</span>
                 </a>
-                <a>
+                <a href="#">
                     <img src={Watchlisticon} alt="Watch list" />
                     <span>WATCHLIST</span>
                 </a>
-                <a>
+                <a href="#">
                     <img src={Originalsicon} alt="Original" />
                     <span>ORIGINALS</span>
                 </a>
-                <a>
+                <a href="#">
                     <img src={Movieicon} alt="Movies" />
                     <span>MOVIES</span>
                 </a>
-                <a>
+                <a href="#">
                     <img src={SeriesIcon} alt="Series" />
                     <span>SERIES ICON</span>
                 </a>
