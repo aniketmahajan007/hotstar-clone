@@ -1,0 +1,55 @@
+.Header{
+    height: 70px;
+    background-color: #090b13;
+    display: flex;
+    align-items: center;
+}
+.Header .header__logo{
+    height: 46px;
+    padding:10px;
+    margin-left:8px;
+}
+.Header .Nav_menu{
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.Header .Nav_menu > a{
+    margin-left:30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.Header .Nav_menu > a > img{
+    height: 18px;
+}
+.Header .Nav_menu > a > span{
+    font-size: 0.9em;
+    letter-spacing: 1.4px;
+    margin-left: 6px;
+    position: relative;
+}
+.Header .Nav_menu > a > span::after{
+    content: "";
+    height: 1px;
+    background: white;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -8px;
+    width: 110%;
+    opacity: 0;
+    transition: transform 250ms ease-in-out;
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+.Header .Nav_menu > a > span:hover:after{
+    transform: scaleX(1);
+    opacity: 1;
+}
+.Header .UserAvatar{
+    border-radius: 50%;
+    height: 45px;
+    margin-right: 30px;
+}
