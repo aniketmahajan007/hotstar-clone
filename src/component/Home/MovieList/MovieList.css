@@ -1,0 +1,25 @@
+.MovieList .Movie_Box{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.MovieList .Movie_Box > div {
+    border: 3px solid rgba(249, 249, 249, 0.1);
+    border-radius:20px;
+    box-shadow: rgb(0 0 0) 0px 26px 30px -10px, rgb(0 0 0) 0px 16px 10px -10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.MovieList .Movie_Box > div:hover {
+    border: 3px solid white;
+    transform: scale(1.1);
+}
+.MovieList .Movie_Box div img{
+    width: 100%;
+    border-radius:20px;
+}
+@media only screen and (max-width: 975px) {
+    .MovieList .Movie_Box{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

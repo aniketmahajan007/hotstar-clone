@@ -59,4 +59,19 @@
     .header__logo, .menu_short_remove{
        display: none!important;
     }
+    .Header .Nav_menu{
+        margin-left: -5px;
+    }
+    .Header .Nav_menu > a{
+        margin-left:20px;
+    }
+    .Header .Nav_menu > a > span{
+        font-size: 0.8em;
+        letter-spacing: 0.4px;
+        margin-left: 4px;
+    }
+    .Header .UserAvatar{
+        height: 30px;
+        margin-right: 20px;
+    }
 }
