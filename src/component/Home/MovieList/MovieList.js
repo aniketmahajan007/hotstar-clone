@@ -1,5 +1,6 @@
 import React from "react";
 import './MovieList.css';
+import { v4 as uuidv4 } from 'uuid';
 
 function MovieList({Title, Image}){
     return(
@@ -9,7 +10,7 @@ function MovieList({Title, Image}){
                 {
                     Image.map((image)=>{
                         return (
-                            <div>
+                            <div key={uuidv4()}>
                                 <a>
                                     <img src={image} alt="Series" />
                                 </a>
