@@ -21,4 +21,11 @@
 }
 .Detail .Summary{
     font-size: 1.25em;
+    max-width: 925px;
+}
+@media only screen and (max-width: 975px) {
+    .Detail .Summary{
+        font-size: 1.1em;
+        margin-right: 2em;
+    }
 }

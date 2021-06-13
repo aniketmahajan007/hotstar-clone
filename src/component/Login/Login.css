@@ -1,0 +1,58 @@
+.Login{
+    position: relative;
+}
+.Login .LoginBg{
+    width: 100%;
+    height: calc(100vh - 75px);
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+    position: fixed;
+}
+.Login .CenterElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Login .CenterElement > img{
+    margin-bottom: 12px;
+    max-width: 600px;
+    margin-top:4vh
+}
+.Login .CenterElement > img:first-child{
+    margin-top: 15vh;
+}
+.Login .CenterElement > button{
+    color:white;
+    width: 650px;
+    background: rgb(0, 99, 229);
+    height: 65px;
+    font-weight: 800;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+.Login .CenterElement > p{
+    width: 650px;
+    font-size: 0.9em;
+    text-align: center;
+    letter-spacing: 0.4px;
+}
+.Login .CenterElement > button:hover{
+    background: rgb(0, 65, 229);
+}
+@media only screen and (max-width: 684px) {
+    .Login .CenterElement > button{
+        width: 340px;
+        height: 55px;
+        font-size: 1.1em;
+    }
+    .Login .CenterElement > p {
+        width: 340px;
+    }
+    .Login .CenterElement > img{
+        max-width: 340px;
+    }
+}

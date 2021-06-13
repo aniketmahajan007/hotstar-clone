@@ -45,8 +45,8 @@
 }
 
 .Detail .QueueBtn{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     transition: 200ms ease-in-out;
     align-items: center;
     cursor: pointer;
@@ -56,9 +56,13 @@
     color:white;
     font-size: 2.4em;
 }
+.Detail .QueueBtn:hover{
+    background: #4f4f4f;
+}
 .Detail .Sharebtn{
     margin-left:10px;
 }
 .Detail .Sharebtn > img{
-    margin-top:5px;
+    margin-top:2px;
+    margin-left: -2px;
 }
