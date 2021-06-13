@@ -1,0 +1,64 @@
+.Detail .PlayerOptions{
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: 56px;
+    align-items: center;
+}
+.Detail .PlayerOptions .PlayButton{
+    height: 50px;
+    width: 120px;
+    position: relative;
+    display: flex;
+    transition: 200ms ease-in-out;
+    align-items: center;
+    cursor: pointer;
+}
+.Detail .PlayerOptions .PlayButtonLight{
+    margin: 0px 10px 0px 4.5em;
+    border: 1px solid black;
+}
+.Detail .PlayerOptions .PlayButtonLight:hover{
+    background: rgb(200, 197, 197);
+}
+.Detail .PlayerOptions .PlayButtonDark{
+    margin: 0px 10px 0px 0px;
+    background:rgba(0, 0, 0, 0.6);
+    border:1px solid white;
+}
+.Detail .PlayerOptions .PlayButtonDark:hover{
+    background: brown;
+}
+.Detail .PlayButtonLight > img, .Detail .PlayButtonDark > img{
+    width: 24px;
+}
+.Detail .PlayButtonLight > img{
+    margin-left: 10px;
+}
+.Detail .PlayButtonLight > span,.Detail .PlayButtonDark > span{
+    font-size: 15px;
+    margin-left: 2px;
+    margin-top:2px;
+    letter-spacing: 1.5px;
+}
+.Detail .PlayButtonDark > span{
+    color:white;
+}
+
+.Detail .QueueBtn{
+    width: 50px;
+    height: 50px;
+    transition: 200ms ease-in-out;
+    align-items: center;
+    cursor: pointer;
+    background:rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    border:1px solid white;
+    color:white;
+    font-size: 2.4em;
+}
+.Detail .Sharebtn{
+    margin-left:10px;
+}
+.Detail .Sharebtn > img{
+    margin-top:5px;
+}

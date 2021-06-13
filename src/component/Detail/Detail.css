@@ -1,0 +1,24 @@
+.Detail{
+    position: relative;
+}
+.Detail .Background{
+    width: 100%;
+    height: calc(100vh - 75px);
+    object-fit: cover;
+    position: fixed;
+    z-index:-1;
+    opacity: 0.6;
+}
+.Detail .Image_Title{
+    width: 36vw;
+    margin-left: 3em;
+    margin-top: 5em;
+}
+.Detail .Description{
+    margin-left: 4em;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+}
+.Detail .Summary{
+    font-size: 1.25em;
+}
