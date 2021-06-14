@@ -7,12 +7,13 @@
     object-fit: cover;
     position: fixed;
     z-index:-1;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 .Detail .Image_Title{
     width: 36vw;
     margin-left: 3em;
     margin-top: 5em;
+    display: none;
 }
 .Detail .Description{
     margin-left: 4em;
@@ -27,5 +28,19 @@
     .Detail .Summary{
         font-size: 1.1em;
         margin-right: 2em;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .Detail .Summary{
+        font-size: 1.1em;
+        margin-right: 2em;
+    }
+    .Detail .Image_Title{
+        display: initial;
+        margin-left: 1em;
+        width: 54vw;
+    }
+    .Detail .Description{
+        margin-left: 6px;
     }
 }

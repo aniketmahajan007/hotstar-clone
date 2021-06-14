@@ -3,6 +3,7 @@
     flex-flow: row nowrap;
     min-height: 56px;
     align-items: center;
+    margin-top:22vw;
 }
 .Detail .PlayerOptions .PlayButton{
     height: 50px;
@@ -65,4 +66,12 @@
 .Detail .Sharebtn > img{
     margin-top:2px;
     margin-left: -2px;
+}
+@media only screen and (max-width: 600px) {
+    .Detail .PlayerOptions{
+        margin-top:0px;
+    }
+    .Detail .PlayerOptions{
+        margin-left: -3.5em;
+    }
 }
