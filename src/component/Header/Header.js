@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './Header.css';
 import Logo from '../../asset/images/logo.svg';
 import Homeicon from  '../../asset/images/home-icon.svg';
@@ -7,20 +7,58 @@ import Watchlisticon from  '../../asset/images/watchlist-icon.svg';
 import Originalsicon from  '../../asset/images/original-icon.svg';
 import Movieicon from  '../../asset/images/movie-icon.svg';
 import SeriesIcon from  '../../asset/images/series-icon.svg';
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import firebase from "firebase";
+import '../../firebase';
+import {useSelector, useDispatch} from "react-redux";
+import {updateuser} from "../../features/movie/movieSlice";
+
 
 function Header(){
     const underDevelopment = () => {
         alert('This feature is under development');
     }
+    const userdata = useSelector(state => state.hotstar);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const loginredirect = () => {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+                const temp = {
+                    name: result.additionalUserInfo.profile.name,
+                    picture: result.additionalUserInfo.profile.picture
+                }
+                dispatch(updateuser(temp));
+                history.push('/Home');
+            }).catch((error) => {
+                console.log(error);
+        });
+    }
+    const loginchecker = () => {
+        if(userdata.loginuser.length < 1){
+            alert('Login required to access this content');
+        }else{
+            history.push('/Home');
+        }
+    }
+    const signout_initiate = () => {
+        dispatch(updateuser([]));
+        history.push('/')
+    }
+    const [signout, signout_update] = useState(0);
+    const update_signout = () => {
+        signout_update(!signout);
+    }
     return(
         <div className="Header">
             <img className="header__logo" src={Logo} alt="Hotstar Logo" />
             <div className="Nav_menu">
-                <Link to='/Home' >
+                <a href="#" onClick={loginchecker} >
                     <img src={Homeicon} alt="Home" />
                     <span>HOME</span>
-                </Link>
+                </a>
                 <a href="#" onClick={underDevelopment}>
                     <img src={Searchicon} alt="Search" />
                     <span>SEARCH</span>
@@ -42,7 +80,10 @@ function Header(){
                     <span>SERIES ICON</span>
                 </a>
             </div>
-            <img src="https://lh3.googleusercontent.com/ogw/ADea4I4e38gRgi_ih1EcgKnR1_K8MJTWwTOfSo--julzfQ=s83-c-mo" alt="User Avatar" className="UserAvatar" />
+            { (userdata.loginuser.length < 1)
+                ? <div className="login__button" onClick={loginredirect}><span>LOGIN</span></div>
+                : <div className="user_data_box"><img onClick={update_signout} src={userdata.loginuser[0].picture} alt="User Avatar" className="UserAvatar" />{signout ? <span onClick={signout_initiate} className=" Sign__out">Sign Out</span>: ""}</div>
+            }
         </div>
     )
 }

@@ -86,7 +86,11 @@ export const movieSlice = createSlice({
     initialState,
     reducers: {
         updateuser: (state, action) => {
-            state.loginuser = action.payload;
+            if(action.payload.length === 0){
+                state.loginuser = [];
+            }else{
+                state.loginuser.push(action.payload);
+            }
         }
     }
 });

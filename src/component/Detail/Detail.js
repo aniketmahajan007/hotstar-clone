@@ -1,10 +1,17 @@
-import React from "react";
-import { useParams } from 'react-router-dom';
+import React, {useEffect} from "react";
+import {useHistory, useParams} from 'react-router-dom';
 import './Detail.css';
 import PlayerOptions from "./PlayerOptions";
 import {useSelector} from "react-redux";
 
 function Detail(){
+    const userdata = useSelector(state => state.hotstar);
+    const history = useHistory();
+    useEffect(()=>{
+        if(userdata.loginuser.length < 1){
+            history.push('/');
+        }
+    });
     const { id } = useParams();
     const movielist = useSelector(state => state.hotstar).movielist;
     const pagedata = movielist.filter(x => x.id === id)[0];

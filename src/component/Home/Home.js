@@ -1,14 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './Home.css';
 import Background from '../../asset/images/home-background.png'
 import ImageSlider from "./ImageSlider/ImageSlider";
 import Genres from "./Genres/Genres";
 import MovieList from "./MovieList/MovieList";
 import {useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
 
 function Home(){
         // use any Api to fetch list and save to redux using dispatch
         const movielist = useSelector(state => state.hotstar);
+        const userdata = useSelector(state => state.hotstar);
+        const history = useHistory();
+        useEffect(()=>{
+                if(userdata.loginuser.length < 1){
+                        history.push('/');
+                }
+        });
         const recommend  = movielist.movielist.slice(0,4);
         const trending = movielist.movielist.slice(4,7);
         trending.push(movielist.movielist[0])

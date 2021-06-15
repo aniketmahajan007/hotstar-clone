@@ -1,10 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './Login.css';
 import LoginBg from '../../asset/images/login-background.jpg';
 import CTone from '../../asset/images/cta-logo-one.svg';
 import CTtwo from '../../asset/images/cta-logo-two.png';
+import {useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
 
 function Login(){
+    const userdata = useSelector(state => state.hotstar);
+    const history = useHistory();
+    useEffect(()=>{
+        if(userdata.loginuser.length > 0){
+            history.push('/Home');
+        }
+    });
     return (
         <div className="Login">
             <img className="LoginBg" src={LoginBg} alt="Bg Login" />
